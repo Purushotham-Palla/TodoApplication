@@ -17,7 +17,7 @@ import com.todo.model.ToDo;
 @WebServlet("/displayTodo")
 public class DisplayTodo extends HttpServlet {
 	
-//	not used this class bcz i directly sent to alltodolist.jsp
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		int projectId = Integer.parseInt(request.getParameter("projectId"));
