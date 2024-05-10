@@ -8,7 +8,6 @@ ToDoList Application is a simple web-based task management application.
 - Mark tasks as completed
 - Edit task details
 - Delete tasks
-- Filter tasks by status (completed, active)
 - Responsive design for mobile and desktop
 
 ## Tech Stack
