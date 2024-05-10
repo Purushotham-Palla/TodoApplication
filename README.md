@@ -35,3 +35,11 @@ ToDoList Application is a simple web-based task management application.
 
 ```bash
 $ git clone https://github.com/Purushotham-Palla/TodoApplication.git
+
+
+## Contact
+For any questions or feedback, feel free to reach out:
+
+Author: Purushotham-Palla
+GitHub: https://github.com/Purushotham-Palla/
+Email: ppurushotham2001@gmail.com
