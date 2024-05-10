@@ -1,0 +1,68 @@
+@charset "ISO-8859-1";
+*{
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+body{
+    background-image: url(todolist1.png);
+    background-size: cover;
+}
+h1{
+    text-align: center;
+    margin-top: 40px;
+    font-weight: 10rem;
+}
+a{
+    text-decoration: none;
+}
+button,select,input{
+    
+    height: 30px;
+    border-radius: 5px;
+}
+
+.addtodo{
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+    margin-left: 10rem;
+    margin-right: 9rem;
+
+}
+
+table{
+	
+    width: 90%;
+    border: 1px solid  #3a4553;
+    border-collapse: collapse;
+    background-color: #ffff;
+    
+}
+th{
+    height: 45px;
+    border: 1px solid  #3a4553;
+}
+td{
+    height: 26px;
+    background-color: #7EAECD;
+    text-align: center;
+    border: 1px solid  #3a4553;
+}
+tr{    
+    border: 1px solid  #3a4553;
+}   
+
+.details{
+    padding-top: 15px;
+     margin-left: 10rem;
+}
+
+.elements{
+     display: flex;
+     margin-left: 10rem;
+     margin-right: 8.5rem;
+     justify-content: space-between; 
+     padding-bottom: 5px;
+     border-bottom: 1px solid #3a4553;
+}
+

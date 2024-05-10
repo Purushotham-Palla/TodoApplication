@@ -1,0 +1,52 @@
+@charset "ISO-8859-1";
+*{
+    margin: 0;
+    font-family: Arial,sans-serif;
+}
+
+body{
+    background-image: url(Login.png);
+    background-size: cover;
+}
+.login-details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 500px;
+    margin-top: 235px; 
+    height: 250px;
+}
+#login{
+    padding-bottom: 20px;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: sans-serif;
+}
+
+#text-box{
+    height: 50px;
+    border-radius: 20px;
+    width: 300px;
+    padding-left: 20px;
+    color: black;
+    letter-spacing: 2px;
+}
+input{
+    background-color: #E38054;
+    border: none;
+}
+::placeholder {
+    font-weight: bold;
+    color: black;
+}
+
+#submit{    
+    
+    height: 60px;
+    width: 140px;
+    margin-left: 90px; 
+    margin-top: 30px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+

@@ -1,0 +1,43 @@
+@charset "ISO-8859-1";
+*{
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+body{
+    background-image: url(index.png);
+    background-size: cover;
+}
+.options{
+    height: 650px;
+    display:flex;
+    justify-content: center;
+    align-items: last baseline;
+}
+
+button{
+    height: 60px;
+    width: 260px;
+    background-color: #ffffff;
+    border: none;
+    font-size: 19px;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px 20px;
+    border-radius:20px ;
+    letter-spacing: 3px;
+}
+button a{
+    text-decoration: none;
+
+
+    color: black;
+}
+#button1
+{
+    margin: 0px 100px 0px 100px;
+}
+
+
+
+
+
