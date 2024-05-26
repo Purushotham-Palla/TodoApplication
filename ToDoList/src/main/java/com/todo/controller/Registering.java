@@ -28,12 +28,12 @@ public class Registering extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		if(i==1)
 		{
-			out.println("Heello");
+			out.println("Register Successfull");
 //			response.sendRedirect("registersucess.jsp");
 			
 		}
 		else {
-			out.println("Not Heello");
+			out.println("Not Registered... Please Try again");
 //			response.sendRedirect("registerunsucess.jsp");
 		}
 		
