@@ -3,7 +3,6 @@ package com.todo.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,12 +26,11 @@ public class LoginChecking extends HttpServlet {
 		
 		if(login != null)
 		{
-			RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
-			rd.forward(request, response);
+			response.sendRedirect("home");
 		}
 		else {
 			PrintWriter out = response.getWriter();
-			out.println("Fail");
+			out.println("Login Fail.......Please Try again");
 		}
 		
 		
