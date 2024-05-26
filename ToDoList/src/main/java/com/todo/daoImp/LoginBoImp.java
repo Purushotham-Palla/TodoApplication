@@ -17,7 +17,6 @@ public class LoginBoImp implements LoginBo{
 	private static Statement statement;
 	private static ResultSet res;
 	
-	
 	private final static String IN_REGISTER_QUERY = "INSERT INTO `login` (`username`,`password`) VALUES(?,?)";
 	
 	private final static  String GET_LOGIN_QUERY = "SELECT * FROM `login` where `username`=? and `password`=?";
@@ -50,41 +49,31 @@ public class LoginBoImp implements LoginBo{
 				userName = res.getString("username");
 				password = res.getString("password");
 				log=new Login(userName,password);
-				
 			}
 		}
 		catch (Exception e) {
 			e.printStackTrace();
 		}
 		return log;
-		
 	}
 	
 	
 	 public int save(Login log)
 	{
-//		Connection connection = null;
 		try{
 			prepareStatement = connection.prepareStatement(IN_REGISTER_QUERY);
 			
 			prepareStatement.setString(1, log.getUserName());
 			prepareStatement.setString(2, log.getPassword());
 			int i = prepareStatement.executeUpdate();
-			
 			return i;
-			
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
 		return 0;
-		
 	}
-	
-	
-
-	
 	
 }
 
