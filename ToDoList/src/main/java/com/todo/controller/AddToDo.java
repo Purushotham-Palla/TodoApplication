@@ -17,20 +17,22 @@ public class AddToDo extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		int projectId = Integer.parseInt(request.getParameter("project_id"));
+		
 		String description = request.getParameter("description");
 		
 		
 		ToDo toDo = new ToDo(projectId ,description);
 		
 		ToDoBoImp toDoBoImp = new ToDoBoImp();
-		int i = toDoBoImp.save(toDo);
+		
+		 int save = toDoBoImp.save(toDo);
 		
 		PrintWriter out = response.getWriter();
 		
-		if(i==1)
+		if(save==1)
 		{
-			out.println("Sucessfully Adding Todo is Done....");
-//			response.sendRedirect("");
+//			out.println("Sucessfully Adding Todo is Done....");
+			response.sendRedirect("displayTodo?projectId="+projectId);
 		}
 		else {
 			out.println("UnSucessfully Adding Todo is Done....");
