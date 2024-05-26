@@ -27,10 +27,6 @@ public class ProjectsBoImp implements ProjectsBo {
 	private final static String DELETE_QUERY = "DELETE FROM `projects` WHERE `project_id` = ?";
 	
 	
-	
-	
-	
-	
 	public ProjectsBoImp() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -39,7 +35,6 @@ public class ProjectsBoImp implements ProjectsBo {
 		} catch (ClassNotFoundException |SQLException e1) {
 			e1.printStackTrace();
 		} 
-
 	
 	}
 
@@ -74,20 +69,17 @@ public class ProjectsBoImp implements ProjectsBo {
 			
 			return i;
 			
-			
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}
 		
 		return 0;	
 
-	
 	}
 
 	@Override
 	public int delete(int projectId) {
 
-		
 		try {
 			prepareStatement = connection.prepareStatement(DELETE_QUERY);
 			
