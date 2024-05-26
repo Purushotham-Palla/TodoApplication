@@ -22,21 +22,22 @@ public class AddProject extends HttpServlet {
 		Projects project = new Projects(title);
 		
 		ProjectsBoImp proboImp = new ProjectsBoImp();
-		int i = proboImp.save(project);
+		
+		int save = proboImp.save(project);
+		
 		PrintWriter out = response.getWriter();
-		if( i ==1)
+		
+		if(save==1)
 		{
-			out.println("Project is successfully done");
+//			out.println("Project is successfully done");
+			response.sendRedirect("home");
 		}
 		else
 		{
 			out.println("Project is Unsuccessfully done");
+//			response.sendRedirect("addProject.jsp?save="+save);
 		}
-		
-				 
-
-
 	}
-
 	
 }
+
