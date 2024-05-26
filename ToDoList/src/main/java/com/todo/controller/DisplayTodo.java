@@ -17,25 +17,19 @@ import com.todo.model.ToDo;
 @WebServlet("/displayTodo")
 public class DisplayTodo extends HttpServlet {
 	
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		int projectId = Integer.parseInt(request.getParameter("projectId"));
-		System.out.println("DisplayTodo.java projectId: "+projectId);
-		
+
 		ToDoBoImp toDoBoImp = new ToDoBoImp();
-		List<ToDo> all_details = toDoBoImp.getAll(projectId);
-		for(ToDo td:all_details)
-		{
-			System.out.println("Added sucessfully to List ProjectId : "+td.getProjectId());
-		}
-		System.out.println("-----------------------");
-		request.setAttribute("todo-list", all_details);
+		
+		List<ToDo> allDetails = toDoBoImp.getAll(projectId);
+		
+		request.setAttribute("todo-list", allDetails);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("allTodoList.jsp");
-		rd.include(request, response);
 		
-
+		rd.forward(request, response);
 	
 	}
 
