@@ -2,11 +2,15 @@ package com.todo.controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.todo.daoImp.ToDoBoImp;
+import com.todo.model.ToDo;
 
 @WebServlet("/editingTodoList")
 public class EditingTodoList extends HttpServlet {
@@ -14,15 +18,20 @@ public class EditingTodoList extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int todoId = Integer.parseInt(request.getParameter("todoId"));
-//		int projectId = Integer.parseInt(request.getParameter("projectId"));
-		//covert into integer
-//		int id = (Integer)request.getAttribute("project-id");
 		
-		System.out.println("EditingTodoList.java todoId: "+todoId);
+		ToDoBoImp ob = new ToDoBoImp(); 
 		
-		response.sendRedirect("editingTodo.jsp?todoId="+todoId);
-//		response.sendRedirect("editingTodo.jsp?todoId="+todoId+"&projectId="+projectId);
+		ToDo tdo1 = ob.getOneTodo(todoId);
 		
+		ToDo tdo2=ob.getOneProject(tdo1.getProjectId());
+		
+		request.setAttribute("tdo1", tdo1);
+
+		request.setAttribute("tdo2", tdo2);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("editingTodo.jsp");
+
+		rd.forward(request, response);
 	}
 
 }
