@@ -18,36 +18,38 @@ public class UpdatingTodo extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		int todoId = Integer.parseInt(request.getParameter("todoId"));
+		
 		String projectTitle = request.getParameter("projectTitle");
+		
 		String description = request.getParameter("description");
+		
 		int projectId = Integer.parseInt(request.getParameter("projectId"));
 		
 		boolean status =false;
+		
 		String stat=request.getParameter("status");
+		
 		if(stat.equals("on"))
 		{			
 			status=true;
 		}
-		
-		
+		else {
+			status=false;
+		}
 		
 		ToDo toDo = new ToDo(todoId,projectId,description,status,projectTitle);
 		
 		ToDoBoImp todoBoImp = new ToDoBoImp();
 		
-		 int effectedRows = todoBoImp.update(toDo);
-		
+		int effectedRows = todoBoImp.update(toDo);
 		
 		 PrintWriter out = response.getWriter();
-		 System.out.println("project Id ;"+todoId);
-		 System.out.println("status : ;"+status);
 		 
-//		if(effectedRows==1)
 			if(effectedRows==2)
 		{
-			out.println("Records Updated.....");
-//			response.sendRedirect("allTodoList.jsp?projectId="+todoId);
-//			response.sendRedirect("allTodoList.jsp");
+//			("Records Updated.....");
+				
+			response.sendRedirect("displayTodo?projectId="+projectId);
 		} 	
 		else {
 			
