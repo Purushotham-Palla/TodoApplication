@@ -30,7 +30,6 @@ public class AddProject extends HttpServlet {
 		}
 		else
 		{
-			
 			out.println("Project is Unsuccessfully done");
 		}
 		
