@@ -16,6 +16,7 @@
 	        <div class="form">
 	        
 	            <form action="addProject" method="get">
+	            	
 
 	                <input type="text" name="projectTitle" placeholder="Project Name" id="text-box" required><br>     
 	                <input type="submit" name="submit" id="submit">
