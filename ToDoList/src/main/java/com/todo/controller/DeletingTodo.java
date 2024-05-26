@@ -14,28 +14,33 @@ import com.todo.daoImp.ToDoBoImp;
 
 @WebServlet("/deletingTodo")
 public class DeletingTodo extends HttpServlet {
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		ToDoBoImp toDoBoImp = new ToDoBoImp();
+		
 		int todoId = Integer.parseInt(request.getParameter("todoId"));
-		int i = toDoBoImp.delete(todoId);
+		
+		int result = toDoBoImp.delete(todoId);
+		
+		int projectId = Integer.parseInt(request.getParameter("projectId"));
+		
+		System.out.println("projectId "+projectId);
+		
 		PrintWriter out = response.getWriter();
-		if(i==1)
+		
+		
+		if(result==1)
 		{
-			out.println("Deleted Successfully done......");
-			System.out.println("Deleted todoId :"+todoId);
-//			response.sendRedirect("allTodoList.jsp");
+//			out.println("Deleted Successfully done......");
 			
-			
+			response.sendRedirect("displayTodo?projectId="+projectId);
 		}
 		else {
-			out.println("Deleted Failed......"
-					+ "Please Try again");
+			out.println("Deleted Failed...... Please Try again");
 			
 		}
-		
-		
 	
 	}
-
 
 }
